@@ -7,18 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/main.css">
+    <link rel="stylesheet" href="./assets/normalize.css">
+    <link rel="stylesheet" href="./assets/">
     <title>Hot Takez Takeaway</title>
 </head>
 
 <body class="p-3 bg-blue-200">
 
+
+
     <header>Hot Takez Takeaway</header>
 
     <!--Search Input -->
-    <form class="mt-4" id="search-form">
-        <button class="border ml-4 p-2 bg-orange-200">Search</button>
-    </form>
 
+    <div class="dropdown">
+
+        <select id="format-input" class="form-input">
+            <option value="" disabled selected>Cuisine</option>
+            <option value="american">American</option>
+            <option value="mexican">Mexican</option>
+            <option value="italian">Italian</option>
+            <option value="mediterrainean">Mediterrainean</option>
+            <option value="chinese">Chinese</option>
+            <option value="asian">Asian</option>
+            <option value="latinAmerican">Latin American</option>
+            <option value="pizza">Pizza</option>
+        </select>
+
+        <select id="format-input" class="form-input w-100">
+            <option value="" disabled selected>Location</option>
+            <option value="northwestSide">Northwest Side</option>
+            <option value="northSide">North Side</option>
+            <option value="theLoop">The Loop</option>
+            <option value="southSide">South side</option>
+            <option value="southeastSide">Southeast Side</option>
+            <option value="southwestSide">Southwest Side</option>
+            <option value="suburbs">Suburbs</option>
+        </select>
+
+        <select id="format-input" class="form-input w-100">
+            <option value="" disabled selected>Price</option>
+            <option value="cheapest">The last day before payday</option>
+            <option value="cheaper">I'm not Mr. Moneybags</option>
+            <option value="cheap">I overspent last weekend</option>
+            <option value="average">I've got it in the budget</option>
+            <option value="more">I found an extra $20</option>
+            <option value="most">I won a bet</option>
+            <option value="mostest">I am Mr. Moneybags</option>
+
+        </select>
+        <button class="search">Search</button>
+
+    </div>
 
     <div class="card">
         <div class="name">Name</div>
@@ -29,7 +69,23 @@
         <div class="link">Link</div>
     </div>
 
-
+    <div class="wrapper">
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
 
 
 
@@ -37,6 +93,6 @@
     <!--Search buttons-->
 
 </body>
-<script src="./script.js"></script>
+<script src="./assets/script.js"></script>
 
 </html>

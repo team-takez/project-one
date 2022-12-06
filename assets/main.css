@@ -16,10 +16,11 @@ header {
 
 
 body{
-    background-image: url("https://static.wikia.nocookie.net/heroism/images/e/ee/Bikini_Bottom.png/revision/latest?cb=20210909164346");
-    background-size: cover;
+    background-image: url("./images/Bikini_Bottom.webp");
+    background-size: fill;
+    background-repeat: no-repeat;
     margin: none;
-    overflow: hidden;
+    overflow: auto;
 
 }
 .dropdown{

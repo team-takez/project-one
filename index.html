@@ -22,8 +22,7 @@
 
     <form class="dropdown" id="search-form">
 
-
-        <select id="format-input" class="form-input">
+        <select id="format-input-cuisine" class="form-input">
             <option value="" disabled selected>Cuisine</option>
             <option value="american">American</option>
             <option value="mexican">Mexican</option>
@@ -35,29 +34,18 @@
             <option value="pizza">Pizza</option>
         </select>
 
-        <select id="format-input" class="form-input w-100">
-            <option value="" disabled selected>Location</option>
-            <option value="northwestSide">Northwest Side</option>
-            <option value="northSide">North Side</option>
-            <option value="theLoop">The Loop</option>
-            <option value="southSide">South side</option>
-            <option value="southeastSide">Southeast Side</option>
-            <option value="southwestSide">Southwest Side</option>
-            <option value="suburbs">Suburbs</option>
-        </select>
 
-        <select id="format-input" class="form-input w-100">
+        <select id="format-input-price" class="form-input w-100">
             <option value="" disabled selected>Price</option>
-            <option value="cheapest">The last day before payday</option>
-            <option value="cheaper">I'm not Mr. Moneybags</option>
-            <option value="cheap">I overspent last weekend</option>
-            <option value="average">I've got it in the budget</option>
-            <option value="more">I found an extra $20</option>
-            <option value="most">I won a bet</option>
-            <option value="mostest">I am Mr. Moneybags</option>
+            <option value="$">The last day before payday</option>
+            <option value="$$ - $$$">I'm not Mr. Moneybags</option>
+            <option value="$$$$">I overspent last weekend</option>
+            
 
         </select>
         <button class="search">Search</button>
+
+<input type="text" id="city" placeholder="city">
 
     </form>
 

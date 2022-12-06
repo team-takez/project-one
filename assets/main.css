@@ -23,6 +23,11 @@ body{
     overflow: auto;
 
 }
+select {
+    display: none;
+}
+
+
 .dropdown{
    display: flex;
    flex-direction: row;

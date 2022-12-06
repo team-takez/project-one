@@ -78,6 +78,12 @@ function handleFormSubmit(event) {
               divTag.setAttribute("class", "p-2");
               divTag.innerHTML = `<h2> ${restaurant.name} </h2>`;
               divTag.innerHTML += `<img class="" src="${restaurant.photo.images.original.url}">`;
+              divTag.innerHTML += `<h3> ${restaurant.cuisine[0].name}`;
+              divTag.innerHTML += `<h4> ${restaurant.price_level}`;
+              divTag.innerHTML += `<h5> ${restaurant.rating}`;
+              divTag.innerHTML += `<h6> ${restaurant.address}`;
+              divTag.innerHTML += `<h6> ${restaurant.phone}`;
+
               restaurantCard.append(divTag);
             }
           });

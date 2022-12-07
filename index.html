@@ -8,7 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/main.css">
     <link rel="stylesheet" href="./assets/normalize.css">
-    <link rel="stylesheet" href="./assets/">
+    <link rel="stylesheet" href="./assets/webfontkit-20221203-230628 - Shortcut.lnk">
+    <link rel="stylesheet" href="./assets/images/Bikini_Bottom.webp">
     <title>Hot Takez Takeaway</title>
 </head>
 
@@ -19,8 +20,11 @@
     <header>Hot Takez Takeaway</header>
 
     <!--Search Input -->
-
+    <div class="wrapper">
     <form class="dropdown" id="search-form">
+        <input type="text" id="city" placeholder="city">
+        <button class="search"></button>
+
 
         <select id="format-input-cuisine" class="form-input">
             <option value="" disabled selected>Cuisine</option>
@@ -35,7 +39,7 @@
         </select>
 
 
-        <select id="format-input-price" class="form-input w-100">
+        <select id="format-input-price" class="form-input">
             <option value="" disabled selected>Price</option>
             <option value="$">The last day before payday</option>
             <option value="$$ - $$$">I'm not Mr. Moneybags</option>
@@ -43,23 +47,24 @@
             
 
         </select>
-        <button class="search">Search</button>
+        <button class="search">  Search  </button>
 
-<input type="text" id="city" placeholder="city">
+
 
     </form>
 
-
-    <div class="card" id="restaurant-card">
-        <div class="name">Name</div>
-        <div class="address">Address</div>
-        <img src="https://media-cdn.tripadvisor.com/media/photo-o/0f/4b/fd/a7/our-dining-room.jpg" alt="" class="photo">
-        <div class="description">Description</div>
-        <div class="hours">Hours</div>
-        <div class="link">Link</div>
-    </div>
-
-    <div class="wrapper">
+<h3 class="cardWrap">
+    <main class="card" id="restaurant-card">
+        
+        <!-- <div class="name">Name</div>
+        <div class="address">Address</div> -->
+        <!-- <img src="https://media-cdn.tripadvisor.com/media/photo-o/0f/4b/fd/a7/our-dining-room.jpg" alt="" class="photo"> -->
+        <!-- <div class="description">Description</div>
+c:\Users\k_oco\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\code\electron-sandbox\workbench\workbench.html        <div class="hours">Hours</div>
+        <div class="link">Link</div> -->
+    </main>
+</h3>
+    
         <div><span class="dot"></span></div>
         <div><span class="dot"></span></div>
         <div><span class="dot"></span></div>
@@ -73,8 +78,8 @@
         <div><span class="dot"></span></div>
         <div><span class="dot"></span></div>
         <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
+        <!-- <div><span class="dot"></span></div> -->
+        <!-- <div><span class="dot"></span></div> -->
     </div>
 
 

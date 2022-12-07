@@ -2,7 +2,7 @@ let searchForm = document.querySelector("#search-form");
 let priceDropdown = document.querySelector("#format-input-price");
 let searchInput = document.querySelector("#searchInput");
 let restaurantCard = document.querySelector("#restaurant-card");
-let dogBreeds = document.querySelector("#dog-breeds");
+
 let apiKeys = [
   "4eef0a8f66msh0e3d9145b05fdc5p14c740jsn611969b39db8", //kevin-[0]
   "de207c4a1bmsh2343afc820503aap1170efjsncd8fc64f4fe7", //tyler-[1]
@@ -46,7 +46,7 @@ function handleFormSubmit(event) {
         method: "POST",
         headers: {
           "content-type": "application/x-www-form-urlencoded",
-          "X-RapidAPI-Key": apiKeys[3],
+          "X-RapidAPI-Key": apiKeys[2],
           "X-RapidAPI-Host": "worldwide-restaurants.p.rapidapi.com",
         },
       })
@@ -67,13 +67,13 @@ function handleFormSubmit(event) {
             if (index < 10) {
               let divTag = document.createElement("div");
               divTag.setAttribute("class", "p-2");
-              divTag.innerHTML = `<h2> ${restaurant.name} </h2>`;
+              divTag.innerHTML = `<div> ${restaurant.name} </div>`;
               divTag.innerHTML += `<img class="" src="${restaurant.photo.images.original.url}">`;
-              divTag.innerHTML += `<h3> ${restaurant.cuisine[0].name}`;
-              divTag.innerHTML += `<h4> ${restaurant.price_level}`;
-              divTag.innerHTML += `<h5> ${restaurant.rating}`;
-              divTag.innerHTML += `<h6> ${restaurant.address}`;
-              divTag.innerHTML += `<h6> ${restaurant.phone}`;
+              divTag.innerHTML += `<div> ${restaurant.cuisine[0].name}`;
+              divTag.innerHTML += `<div> ${restaurant.price_level}`;
+              divTag.innerHTML += `<div> ${restaurant.rating}`;
+              divTag.innerHTML += `<div> ${restaurant.address}`;
+              divTag.innerHTML += `<div> ${restaurant.phone}`;
               restaurantCard.append(divTag);
             }
           });
@@ -90,15 +90,15 @@ function handlePriceChange(event) {
   console.log(filteredRestaurants);
   filteredRestaurants.forEach((restaurant, index) => {
     if (index < 10) {
-      let divTag = document.createElement("div");
+      let divTag = document.createElement("h2");
       divTag.setAttribute("class", "p-2");
       divTag.innerHTML = `<h2> ${restaurant.name} </h2>`;
       divTag.innerHTML += `<img class="" src="${restaurant.photo.images.original.url}">`;
-      divTag.innerHTML += `<h3> ${restaurant.cuisine[0].name}`;
-      divTag.innerHTML += `<h4> ${restaurant.price_level}`;
-      divTag.innerHTML += `<h5> ${restaurant.rating}`;
-      divTag.innerHTML += `<h6> ${restaurant.address}`;
-      divTag.innerHTML += `<h6> ${restaurant.phone}`;
+      divTag.innerHTML += `<h2> ${restaurant.cuisine[0].name}`;
+      divTag.innerHTML += `<h2> ${restaurant.price_level}`;
+      divTag.innerHTML += `<h2> ${restaurant.rating}`;
+      divTag.innerHTML += `<h2> ${restaurant.address}`;
+      divTag.innerHTML += `<h2> ${restaurant.phone}`;
       restaurantCard.append(divTag);
     }
   });

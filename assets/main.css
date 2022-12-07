@@ -1,29 +1,26 @@
-@font-face {
-    font-family: 'spongeboy_me_bobregular';
-    src: url('spongeboy_me_bob-webfont.woff2') format('woff2'),
-         url('spongeboy_me_bob-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 
 header {
-    font-style: 'spongeboy_me_bobregular';
-    color: yellow;
-    font-size: xx-large;
+    font-family: 'Bubblegum Sans', cursive;;
+    color: #fbfe02;
+    font-size: 4rem;
+	-webkit-text-stroke: 3px #0D62CF;
     display: flex;
+    align-items: center;
     justify-content: center;
-   padding: 2rem;
-    
+   
+
 }
 
 
 body{
-    background-image: url("./images/Bikini_Bottom.webp");
-    background-size: fill;
-    background-repeat: no-repeat;
-    margin: none;
-    overflow: auto;
+    background-image: url(./images/Spongebob-Floral-Background.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(13,98,207,1) 53%, rgba(0,212,255,1) 100%);
+     margin: none;
+    overflow: auto ;
 
 }
 select {
@@ -33,16 +30,29 @@ select {
 
 .dropdown{
    display: flex;
-   flex-direction: row;
-   flex-direction: row-reverse;
-   justify-content: left baseline;
-   justify-content: space-around;
-   margin: 3rem;
+   /* flex-direction: row-reverse; */
+
+   /* justify-content: space-around; */
+   
 }
-    .search {
+.form-input{
+    background: white ;
+     color: #0D62CF;
+
      
-     background: white;
+}
+.search {
+     
+     background: #0D62CF;
+     color: white;
+
       }
+
+.city {
+
+    background: white;
+    border: #0D62CF;
+}
 
 .icon{
     max-width: 100%;
@@ -58,6 +68,19 @@ select {
     width: 100%;
     max-width: 420px;
     margin: 1em;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+
+}
+.cardWrap {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;   
 }
 .wrapper{
     width: 100%;

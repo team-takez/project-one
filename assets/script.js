@@ -1,8 +1,8 @@
 let searchForm = document.querySelector("#search-form");
 let priceDropdown = document.querySelector("#format-input-price");
+let cuisineDropdown = document.querySelector("#format-input-cuisine");
 let searchInput = document.querySelector("#searchInput");
 let restaurantCard = document.querySelector("#restaurant-card");
-let dogBreeds = document.querySelector("#dog-breeds");
 let apiKeys = [
   "4eef0a8f66msh0e3d9145b05fdc5p14c740jsn611969b39db8", //kevin-[0]
   "de207c4a1bmsh2343afc820503aap1170efjsncd8fc64f4fe7", //tyler-[1]
@@ -15,6 +15,7 @@ let apiKeys = [
   "64e11e875fmsh272baa4a60cfe2dp10d5c3jsn0def253d0897", //edgar4-[6]
 ];
 let restaurants = [];
+let masterCuisineArr = [""];
 
 // let cuisineType = document.querySelector("");
 // let location = document.querySelector("");
@@ -31,7 +32,7 @@ function handleFormSubmit(event) {
     method: "POST",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": apiKeys[2],
+      "X-RapidAPI-Key": apiKeys[4],
       "X-RapidAPI-Host": "worldwide-restaurants.p.rapidapi.com",
     },
   })
@@ -46,7 +47,7 @@ function handleFormSubmit(event) {
         method: "POST",
         headers: {
           "content-type": "application/x-www-form-urlencoded",
-          "X-RapidAPI-Key": apiKeys[3],
+          "X-RapidAPI-Key": apiKeys[5],
           "X-RapidAPI-Host": "worldwide-restaurants.p.rapidapi.com",
         },
       })
@@ -75,11 +76,45 @@ function handleFormSubmit(event) {
               divTag.innerHTML += `<h6> ${restaurant.address}`;
               divTag.innerHTML += `<h6> ${restaurant.phone}`;
               restaurantCard.append(divTag);
+
+              // edgar martinez 12.5.22
+              // creates cuisine dropdown
+              createCuisine(data);
             }
           });
         });
     });
 }
+function createCuisine(data) {
+  populateCuisineOptions(createCuisineArr(data));
+}
+function populateCuisineOptions(cuisineArr) {
+  for (let i = 0; i < cuisineArr.length; i++) {
+    let cuisineEl = document.createElement("option");
+    cuisineEl.setAttribute("value", cuisineArr[i]);
+    cuisineEl.setAttribute("id", cuisineArr[i]);
+    cuisineEl.textContent = cuisineArr[i];
+    cuisineDropdown.append(cuisineEl);
+  }
+}
+
+// takes fetched data
+// loops through data to pull out cuisine types [no duplicates]
+function createCuisineArr(data) {
+  let length = data.results.data.length;
+  let cuisineArr = [];
+
+  for (let i = 0; i < length; i++) {
+    let apiCuisineLength = Object.keys(data.results.data[i].cuisine).length;
+    for (let j = 0; j < apiCuisineLength; j++) {
+      if (!cuisineArr.includes(data.results.data[i].cuisine[j].name)) {
+        cuisineArr.push(data.results.data[i].cuisine[j].name);
+      }
+    }
+  }
+  return cuisineArr;
+}
+
 function handlePriceChange(event) {
   restaurantCard.innerHTML = "";
 

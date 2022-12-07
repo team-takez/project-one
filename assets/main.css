@@ -11,6 +11,9 @@ header {
     font-style: 'spongeboy_me_bobregular';
     color: yellow;
     font-size: xx-large;
+    display: flex;
+    justify-content: center;
+   padding: 2rem;
     
 }
 
@@ -34,6 +37,7 @@ select {
    flex-direction: row-reverse;
    justify-content: left baseline;
    justify-content: space-around;
+   margin: 3rem;
 }
     .search {
      

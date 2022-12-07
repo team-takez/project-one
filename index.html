@@ -8,7 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/main.css">
     <link rel="stylesheet" href="./assets/normalize.css">
-    <link rel="stylesheet" href="./assets/">
+    <link rel="stylesheet" href="./assets/webfontkit-20221203-230628 - Shortcut.lnk">
+    <link rel="stylesheet" href="./assets/images/Bikini_Bottom.webp">
     <title>Hot Takez Takeaway</title>
 </head>
 
@@ -19,47 +20,49 @@
     <header>Hot Takez Takeaway</header>
 
     <!--Search Input -->
-
-    <form class="dropdown" id="search-form">
-
-        <select id="format-input-cuisine" class="form-input">
-            <option value="" disabled selected>Cuisine</option>
-            <option value="american">American</option>
-            <option value="mexican">Mexican</option>
-            <option value="italian">Italian</option>
-            <option value="mediterrainean">Mediterrainean</option>
-            <option value="chinese">Chinese</option>
-            <option value="asian">Asian</option>
-            <option value="latinAmerican">Latin American</option>
-            <option value="pizza">Pizza</option>
-        </select>
-
-
-        <select id="format-input-price" class="form-input w-100">
-            <option value="" disabled selected>Price</option>
-            <option value="$">The last day before payday</option>
-            <option value="$$ - $$$">I'm not Mr. Moneybags</option>
-            <option value="$$$$">I overspent last weekend</option>
-            
-
-        </select>
-        <button class="search">Search</button>
-
-<input type="text" id="city" placeholder="city,state">
-
-    </form>
-
-
-    <div class="card" id="restaurant-card">
-        <div class="name">Name</div>
-        <div class="address">Address</div>
-        <img src="https://media-cdn.tripadvisor.com/media/photo-o/0f/4b/fd/a7/our-dining-room.jpg" alt="" class="photo">
-        <div class="description">Description</div>
-        <div class="hours">Hours</div>
-        <div class="link">Link</div>
-    </div>
-
     <div class="wrapper">
+        <form class="dropdown" id="search-form">
+            <input type="text" id="city" placeholder="city">
+            <button class="search"></button>
+
+
+            <select id="format-input-cuisine" class="form-input">
+                <option value="" disabled selected>Cuisine</option>
+                <option value="american">American</option>
+                <option value="mexican">Mexican</option>
+                <option value="italian">Italian</option>
+                <option value="mediterrainean">Mediterrainean</option>
+                <option value="chinese">Chinese</option>
+                <option value="asian">Asian</option>
+                <option value="latinAmerican">Latin American</option>
+                <option value="pizza">Pizza</option>
+            </select>
+
+
+            <select id="format-input-price" class="form-input">
+                <option value="" disabled selected>Price</option>
+                <option value="$">The last day before payday</option>
+                <option value="$$ - $$$">I'm not Mr. Moneybags</option>
+                <option value="$$$$">I overspent last weekend</option>
+
+
+            </select>
+            <button class="search"> Search </button>
+
+
+
+        </form>
+
+        <h3 class="cardWrap">
+            <main class="card" id="restaurant-card">
+
+
+                <img src="https://media-cdn.tripadvisor.com/media/photo-o/0f/4b/fd/a7/our-dining-room.jpg" alt=""
+                    class="photo">
+
+            </main>
+        </h3>
+
         <div><span class="dot"></span></div>
         <div><span class="dot"></span></div>
         <div><span class="dot"></span></div>

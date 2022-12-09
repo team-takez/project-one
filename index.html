@@ -8,68 +8,69 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/main.css">
     <link rel="stylesheet" href="./assets/normalize.css">
-    <link rel="stylesheet" href="./assets/webfontkit-20221203-230628 - Shortcut.lnk">
-    <link rel="stylesheet" href="./assets/images/Bikini_Bottom.webp">
     <title>Hot Takez Takeaway</title>
 </head>
 
-<body class="p-3 bg-blue-200">
+<body>
 
 
 
     <header>Hot Takez Takeaway</header>
-
-    <!--Search Input -->
     <div class="wrapper">
-        <form class="dropdown" id="search-form">
-            <input type="text" id="city" placeholder="city">
-            <button class="search"></button>
 
 
-            <select id="format-input-cuisine" class="form-input">
-                <option value="" disabled selected>Cuisine</option>
-            </select>
+    <div class="menu">
+        <!--Search Input -->
+        <div class="card" >
+
+            <input type="text" id="city" class="search-bar" placeholder="City..?">
+
+            <button class="search" id="searchBtn"><img src="./assets/images/icons8-search-30.png" alt="Search"></button>
+            <!-- <a target="_blank" href="https://icons8.com/icon/59878/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+
+            <form class="dropdown" id="search-form">
+
+                <select id="format-input-cuisine" class="form-input">
+                    <option value="" disabled selected>Cuisine</option>
+                </select>
+            </form>
 
 
-            <select id="format-input-price" class="form-input">
-                <option value="" disabled selected>Price</option>
-                <option value="$">The last day before payday</option>
-                <option value="$$ - $$$">I'm not Mr. Moneybags</option>
-                <option value="$$$$">I overspent last weekend</option>
+            <form class="dropdownTwo">
 
 
-            </select>
-            <button class="search"> Search </button>
+                <select id="format-input-price" class="form-input">
+                    <option value="" disabled selected>Price Range</option>
+                    <option value="$">$</option>
+                    <option value="$$ - $$$">$$-$$$</option>
+                    <option value="$$$$">$$$$</option>
 
+                </select>
+            </form>
 
+            <img src="./assets/images/Krusty_Krab_230b.png" alt="" class="photo">
+            <div id="restaurant-card"></div>
+        </div>
+        <div class="results"></div>
 
-        </form>
+    </div>
 
-        <h3 class="cardWrap">
-            <main class="card" id="restaurant-card">
-
-
-                <img src="https://media-cdn.tripadvisor.com/media/photo-o/0f/4b/fd/a7/our-dining-room.jpg" alt=""
-                    class="photo">
-
-            </main>
-        </h3>
-
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
+   
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
+        <div class="bubble"><span class="dot"></span></div>
     </div>
 
 

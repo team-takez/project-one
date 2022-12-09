@@ -1,190 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap");
 
 header {
-    font-family: 'Bubblegum Sans', cursive;;
-    color: #fbfe02;
-    font-size: 4rem;
-	-webkit-text-stroke: 3px #0D62CF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
-
+  font-family: "Bubblegum Sans", cursive;
+  color: #fbfe02;
+  font-size: 4rem;
+  -webkit-text-stroke: 3px #0d62cf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-
-body{
-    background-image: url(./images/Spongebob-Floral-Background.jpg);
-    background-size: cover;
-    background-repeat: repeat;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(13,98,207,1) 53%, rgba(0,212,255,1) 100%);
-     margin: none;
-    overflow: auto ;
-
+body {
+  background-image: url(./images/Spongebob-Floral-Background.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  overflow: auto;
 }
-select {
-    display: none;
-}
-
-
-.dropdown{
-   display: flex;
-   /* flex-direction: row-reverse; */
-
-   /* justify-content: space-around; */
-   
-}
-.form-input{
-    background: white ;
-     color: #0D62CF;
-
-     
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 40px;
+  width: 88px;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 .search {
-     
-     background: #0D62CF;
-     color: white;
-
-      }
-
-.city {
-
-    background: white;
-    border: #0D62CF;
+  top: 6px;
+  padding: 2px;
+  margin: 3px;
+  position: relative;
 }
 
-.icon{
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 24px;
+  color: black;
 }
-.card{
 
-    background: #009cdc;
-    color: white;
-    padding: 2em;
-    border-radius: 30px;
-    width: 100%;
-    max-width: 420px;
-    margin: 1em;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-around;
+.dropdown {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 24px;
+  margin: 4px;
+  background: white;
+}
+.dropdownTwo {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 24px;
+  margin: 4px;
+  background: white;
+}
 
+.format-input-price {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 24px;
+  color: black;
 }
-.cardWrap {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;   
+.imgDiv {
+  width: 356px;
+  height: 236px;
+  padding: 0;
+  margin: 0;
 }
-.wrapper{
-    width: 100%;
-    height: 100%;
-    position: absolute;
+
+.card {
+  background: #009cdc;
+  color: black;
+  padding: 2em;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  margin: 1em;
 }
-.wrapper div{
-    height: 60px;
-    width: 60px;
-    border: 2px solid rgba(255,255,255,0.7);
-    border-radius: 50%;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    animation: animate 4s linear infinite;
+.foodies {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-div .dot {
-    height: 10px;
-    width: 10px;
-    border-radius: 50px;
-    background: rgba(255,255,255,0.5);
-    position: absolute;
-    top: 20%;
-    right: 20%;
-    }
-.wrapper div:nth-child(1){
-    top: 20%;
-    left: 20%;
-    animation: animate 8s linear infinite;
+.results {
+  display: flex;
+  flex-wrap: wrap;
 }
-.wrapper div:nth-child(2){
-    top: 60%;
-    left: 80%;
-    animation: animate 10s linear infinite;
+.restCard {
+  background: #009cdc;
+  color: black;
+  padding: 2em;
+  border-radius: 30px;
+  max-width: 420px;
+  margin: 1em;
 }
-.wrapper div:nth-child(3){
-    top: 40%;
-    left: 40%;
-    animation: animate 5s linear infinite;
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
-.wrapper div:nth-child(4){
-    top: 66%;
-    left: 30%;
-    animation: animate 7s linear infinite;
+.photo {
+  margin: 2px;
+  padding: 2px;
 }
-.wrapper div:nth-child(5){
-    top: 90%;
-    left: 10%;
-    animation: animate 9s linear infinite;
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
-.wrapper div:nth-child(6){
-    top: 30%;
-    left: 60%;
-    animation: animate 5s linear infinite;
+.wrapper .bubble {
+  height: 60px;
+  width: 60px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  animation: animate 4s linear infinite;
 }
-.wrapper div:nth-child(7){
-    top: 70%;
-    left: 20%;
-    animation: animate 8s linear infinite;
+.bubble .dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 20%;
+  right: 20%;
 }
-.wrapper div:nth-child(8){
-    top: 76%;
-    left: 60%;
-    animation: animate 10s linear infinite;
+.wrapper .bubble:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation: animate 8s linear infinite;
 }
-.wrapper div:nth-child(9){
-    top: 50%;
-    left: 50%;
-    animation: animate 6s linear infinite;
+.wrapper .bubble:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation: animate 10s linear infinite;
 }
-.wrapper div:nth-child(10){
-    top: 45%;
-    left: 20%;
-    animation: animate 10s linear infinite;
+.wrapper .bubble:nth-child(3) {
+  top: 40%;
+  left: 40%;
+  animation: animate 5s linear infinite;
 }
-.wrapper div:nth-child(11){
-    top: 10%;
-    left: 90%;
-    animation: animate 9s linear infinite;
+.wrapper .bubble:nth-child(4) {
+  top: 66%;
+  left: 30%;
+  animation: animate 7s linear infinite;
 }
-.wrapper div:nth-child(12){
-    top: 20%;
-    left: 70%;
-    animation: animate 7s linear infinite;
+.wrapper .bubble:nth-child(5) {
+  top: 90%;
+  left: 10%;
+  animation: animate 9s linear infinite;
 }
-.wrapper div:nth-child(13){
-    top: 20%;
-    left: 45%;
-    animation: animate 6s linear infinite;
+.wrapper .bubble:nth-child(6) {
+  top: 30%;
+  left: 60%;
+  animation: animate 5s linear infinite;
 }
-.wrapper div:nth-child(14){
-    top: 60%;
-    left: 5%;
-    animation: animate 8s linear infinite;
+.wrapper .bubble:nth-child(7) {
+  top: 70%;
+  left: 20%;
+  animation: animate 8s linear infinite;
 }
-.wrapper div:nth-child(15){
-    top: 90%;
-    left: 80%;
-    animation: animate 9s linear infinite;
+.wrapper .bubble:nth-child(8) {
+  top: 76%;
+  left: 60%;
+  animation: animate 10s linear infinite;
 }
-@keyframes animate{
-    0%{
-        transform: scale(0) translateY(0) rotate(70deg);
-    }
-    100%{ transform: scale(1.3) translateY(-100px) rotate(360deg);
-    }
+.wrapper .bubble:nth-child(9) {
+  top: 50%;
+  left: 50%;
+  animation: animate 6s linear infinite;
+}
+.wrapper .bubble:nth-child(10) {
+  top: 45%;
+  left: 20%;
+  animation: animate 10s linear infinite;
+}
+.wrapper .bubble:nth-child(11) {
+  top: 10%;
+  left: 90%;
+  animation: animate 9s linear infinite;
+}
+.wrapper .bubble:nth-child(12) {
+  top: 20%;
+  left: 70%;
+  animation: animate 7s linear infinite;
+}
+.wrapper .bubble:nth-child(13) {
+  top: 20%;
+  left: 45%;
+  animation: animate 6s linear infinite;
+}
+.wrapper .bubble:nth-child(14) {
+  top: 60%;
+  left: 5%;
+  animation: animate 8s linear infinite;
+}
+.wrapper .bubble:nth-child(15) {
+  top: 90%;
+  left: 80%;
+  animation: animate 9s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(70deg);
+  }
+  100% {
+    transform: scale(1.3) translateY(-100px) rotate(360deg);
+  }
 }

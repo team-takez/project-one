@@ -1,9 +1,10 @@
 let searchForm = document.querySelector("#search-form");
+let searchBtn = document.querySelector("#searchBtn");
 let priceDropdown = document.querySelector("#format-input-price");
 let cuisineDropdown = document.querySelector("#format-input-cuisine");
 let searchInput = document.querySelector("#searchInput");
 let restaurantCard = document.querySelector("#restaurant-card");
-let dogBreeds = document.querySelector("#dog-breeds");
+let results = document.querySelector(".results");
 let apiKeys = [
   "4eef0a8f66msh0e3d9145b05fdc5p14c740jsn611969b39db8", //kevin-[0]
   "de207c4a1bmsh2343afc820503aap1170efjsncd8fc64f4fe7", //tyler-[1]
@@ -26,15 +27,14 @@ let filteredRestaurants = [];
 //functions
 
 function handleFormSubmit(event) {
-  event.preventDefault();
-  restaurantCard.innerHTML = "";
+  document.querySelector(".results").innerHTML = "";
   let city = document.querySelector("#city").value;
   let locationRequestUrl = `https://worldwide-restaurants.p.rapidapi.com/typeahead?q=${city}&language=en_US&currency=USD`;
   fetch(locationRequestUrl, {
     method: "POST",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": apiKeys[3],
+      "X-RapidAPI-Key": apiKeys[6],
       "X-RapidAPI-Host": "worldwide-restaurants.p.rapidapi.com",
     },
   })
@@ -42,14 +42,13 @@ function handleFormSubmit(event) {
       return response.json();
     })
     .then(function (location) {
-      let locationID = location.results.data[6].result_object.location_id;
-      console.log(locationID);
+      let locationID = location.results.data[0].result_object.location_id;
       let requestUrl = `https://worldwide-restaurants.p.rapidapi.com/search?language=en_US&limit=30&location_id=${locationID}&currency=USD`;
       fetch(requestUrl, {
         method: "POST",
         headers: {
           "content-type": "application/x-www-form-urlencoded",
-          "X-RapidAPI-Key": apiKeys[3],
+          "X-RapidAPI-Key": apiKeys[6],
           "X-RapidAPI-Host": "worldwide-restaurants.p.rapidapi.com",
         },
       })
@@ -57,26 +56,23 @@ function handleFormSubmit(event) {
           return response.json();
         })
         .then(function (data) {
-          console.log(data.price_level);
           document.querySelectorAll(".form-input").forEach((select) => {
             select.style.display = "block";
           });
           restaurants = data.results.data;
           restaurants.forEach((restaurant, index) => {
             if (index < 10) {
-              let divTag = document.createElement("div");
-              divTag.setAttribute("class", "p-2");
-              divTag.innerHTML = `<h2> ${restaurant.name} </h2>`;
-              divTag.innerHTML += `<img class="" src="${restaurant.photo.images.original.url}">`;
-              divTag.innerHTML += `<h3> ${restaurant.cuisine[0].name}`;
-              divTag.innerHTML += `<h4> ${restaurant.price_level}`;
-              divTag.innerHTML += `<h5> ${restaurant.rating}`;
-              divTag.innerHTML += `<h6> ${restaurant.address}`;
-              divTag.innerHTML += `<h6> ${restaurant.phone}`;
-              restaurantCard.append(divTag);
+              document.querySelector(".results").innerHTML += `<h2 class = "restCard">
+               <p>${restaurant.name}</p>
+               <div class="imgDiv"><img class="foodies" src="${restaurant.photo.images.original.url}"></div>
+                <p>${restaurant.cuisine[0].name}</p>
+                <p>${restaurant.price_level}</p>
+                <p>${restaurant.rating}</p>
+                <p>${restaurant.address}</p>
+                <p>${restaurant.phone}</p>
+              </h2>`;
             }
           });
-          console.log(data);
           createCuisine(data);
           filteredRestaurants = [...restaurants];
         });
@@ -86,7 +82,6 @@ function createCuisine(data) {
   populateCuisineOptions(createCuisineArr(data));
 }
 function populateCuisineOptions(cuisineArr) {
-  console.log("cuisine", cuisineArr);
   for (let i = 0; i < cuisineArr.length; i++) {
     let cuisineEl = document.createElement("option");
     cuisineEl.setAttribute("value", cuisineArr[i]);
@@ -114,7 +109,7 @@ function createCuisineArr(data) {
 }
 
 function handlePriceChange(event) {
-  restaurantCard.innerHTML = "";
+  results.innerHTML = "";
 
   let price = event.target.value;
   let filteredCuisineRestaurants = filteredRestaurants.filter(function (el) {
@@ -122,22 +117,21 @@ function handlePriceChange(event) {
   });
   filteredCuisineRestaurants.forEach((restaurant, index) => {
     if (index < 10) {
-      let pTag = document.createElement("p");
-      pTag.setAttribute("class", "p-2");
-      pTag.innerHTML = `<h2> ${restaurant.name} </h2>`;
-      pTag.innerHTML += `<img class="" src="${restaurant.photo.images.original.url}">`;
-      pTag.innerHTML += `<h3> ${restaurant.cuisine[0].name}`;
-      pTag.innerHTML += `<h4> ${restaurant.price_level}`;
-      pTag.innerHTML += `<h5> ${restaurant.rating}`;
-      pTag.innerHTML += `<h6> ${restaurant.address}`;
-      pTag.innerHTML += `<h6> ${restaurant.phone}`;
-      restaurantCard.append(pTag);
+      document.querySelector(".results").innerHTML += `<h2 class = "restCard">
+      <p>${restaurant.name}</p>
+      <div class="imgDiv"><img class="foodies" src="${restaurant.photo.images.original.url}"></div>
+      <p>${restaurant.cuisine[0].name}</p>
+      <p>${restaurant.price_level}</p>
+      <p>${restaurant.rating}</p>
+      <p>${restaurant.address}</p>
+      <p>${restaurant.phone}</p>
+    </h2>`;
     }
   });
 }
 
 function handleCuisineChange(event) {
-  restaurantCard.innerHTML = "";
+  results.innerHTML = "";
   let cuisine = event.target.value;
   filteredRestaurants = restaurants.filter(function (el) {
     let isCuisine = false;
@@ -148,26 +142,22 @@ function handleCuisineChange(event) {
     }
     return isCuisine;
   });
-  console.log(filteredRestaurants);
+
   filteredRestaurants.forEach((restaurant, index) => {
     if (index < 10) {
-      let divTag = document.createElement("div");
-      divTag.setAttribute("class", "p-2");
-      divTag.innerHTML = `<h2> ${restaurant.name} </h2>`;
-      divTag.innerHTML += `<img class="" src="${restaurant.photo.images.original.url}">`;
-      divTag.innerHTML += `<h3> ${restaurant.cuisine[0].name}`;
-      divTag.innerHTML += `<h4> ${restaurant.price_level}`;
-      divTag.innerHTML += `<h5> ${restaurant.rating}`;
-      divTag.innerHTML += `<h6> ${restaurant.address}`;
-      divTag.innerHTML += `<h6> ${restaurant.phone}`;
-      restaurantCard.append(divTag);
+      document.querySelector(".results").innerHTML += `<h2 class = "restCard">
+      <p>${restaurant.name}</p>
+      <div class="imgDiv"><img class="foodies" src="${restaurant.photo.images.original.url}"></div>
+      <p>${restaurant.cuisine[0].name}</p>
+      <p>${restaurant.price_level}</p>
+      <p>${restaurant.rating}</p>
+      <p>${restaurant.address}</p>
+      <p>${restaurant.phone}</p>
+    </h2>`;
     }
   });
 }
 
-//event listeners
-// init();
-
-searchForm.addEventListener("submit", handleFormSubmit);
+searchBtn.addEventListener("click", handleFormSubmit);
 priceDropdown.addEventListener("change", handlePriceChange);
 cuisineDropdown.addEventListener("change", handleCuisineChange);

@@ -8,7 +8,7 @@ Our platform gives users the ability to locate restaraunts in any specific city 
 
 ## Visuals
 
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Intro site
 ![Takez Takeaway Intro Site](./assets/images/Takez%20Takeaway%20example.PNG)
 
 ## Usage

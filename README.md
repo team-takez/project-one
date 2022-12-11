@@ -50,13 +50,13 @@ The Team Takez Takeaway project is in its end stages with no future plans for de
 
 As a user...
 
-I want an app that allows me to choose restaurant criteria and find locations that match it
+I want an app that allows me to type in a city and select a certain cuisine type and price range and then locate restaurants that match that criteria.
 
 ## Acceptence Criteria
 
 It is done when...
 
-When I open the app, I select a genre of food
+WHEN I open the website, I can type in a city
 THEN it shows restaurants in my area
-WHEN I click on the restaurant, it shows restaurant statistics
-THEN I am able to save the restaurants to my favorites
+WHEN I select a cuisine type and price range
+THEN I am shown options that match the selected criteria

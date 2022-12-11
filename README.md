@@ -9,7 +9,7 @@ Our platform gives users the ability to locate restaraunts in any specific city 
 ## Visuals
 
 Intro site
-![Takez Takeaway Intro Site](./assets/images/Takez%20Takeaway%20example.PNG)
+![Takez Takeaway Intro Site](./assets/images/Takez%20Takeaway.PNG)
 
 ## Usage
 

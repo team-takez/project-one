@@ -34,7 +34,7 @@ function handleFormSubmit(event) {
     method: "POST",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": apiKeys[6],
+      "X-RapidAPI-Key": apiKeys[1],
       "X-RapidAPI-Host": "worldwide-restaurants.p.rapidapi.com",
     },
   })
@@ -48,7 +48,7 @@ function handleFormSubmit(event) {
         method: "POST",
         headers: {
           "content-type": "application/x-www-form-urlencoded",
-          "X-RapidAPI-Key": apiKeys[6],
+          "X-RapidAPI-Key": apiKeys[1],
           "X-RapidAPI-Host": "worldwide-restaurants.p.rapidapi.com",
         },
       })
